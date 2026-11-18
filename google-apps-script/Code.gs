@@ -27,7 +27,8 @@ function doGet(e) {
 }
 
 function publicData_() {
-  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss) throw new Error("Spreadsheet terikat tidak ditemukan.");
   const rows = {};
   Object.keys(COLUMNS).forEach(name => {rows[name] = records_(ss, name, COLUMNS[name]);});
   const verified_ = value => str_(value).toLowerCase() === 'terverifikasi';

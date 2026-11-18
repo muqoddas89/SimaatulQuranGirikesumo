@@ -54,3 +54,20 @@ Jangan menggunakan URL editor Apps Script atau URL `/dev`. Gunakan URL Web App `
 - Script dijalankan atas nama pemilik Google Sheets (Execute as Me) tetapi hanya menjalankan fungsi baca di API publik. Jangan menambahkan operasi tulis tanpa autentikasi yang tepat.
 - GitHub Pages dan Apps Script memiliki kuota/batas pemakaian. Jika kebutuhan sangat besar, gunakan backend berbasis autentikasi dan caching yang lebih terkelola.
 - Data bukan real-time detik-ke-detik; pembaruan memerlukan pemuatan/refresh, dan batas cache serta jeda dapat berlaku.
+
+
+## Deployment yang telah diberikan panitia (18 November 2026)
+
+`config.js` sudah berisi alamat Web App:
+
+`https://script.google.com/macros/s/AKfycbzgywu756kPIxWg9yrpLTegsZCKQMZ0aT-XvBJPzCwpXAfq_YpRad3S0r86iINdrLVu/exec`
+
+**Penting**: kode Apps Script pada paket ini mengikuti proyek *container-bound* (dibuka melalui Google Sheets > Ekstensi > Apps Script), menggunakan `SpreadsheetApp.getActiveSpreadsheet()` dan scope `spreadsheets.currentonly`. Jika kode di editor sudah sesuai dengan paket integrasi sebelumnya, **jangan ganti Code.gs hanya untuk memperbarui URL**. Berkas `appsscript.json` hanya contoh manifest yang sesuai untuk akses spreadsheet terikat.
+
+1. Buka tautan `/exec?callback=girikesumoCallback_abcde` dari browser. Respons yang benar berupa kode JavaScript `girikesumoCallback_abcde({"ok":true,...});` berisi `donations` dan `rts`, bukan layar login atau error.
+2. Jika muncul peringatan izin, halaman login, atau `Callback tidak valid`, periksa deployment terbaru, akses `Anyone`, nama fungsi `doGet`, dan kode `Code.gs`.
+3. Jika mengubah `Code.gs` **setelah** deployment, gunakan **Deploy > Manage deployments > Edit > New version > Deploy**, supaya URL `/exec` mengeksekusi kode terbaru.
+4. Jangan unggah isi folder `google-apps-script/` sebagai bagian situs publik bila kode tersebut nantinya mengandung kredensial atau konfigurasi pribadi; cukup gunakan folder itu sebagai referensi saat mengelola Apps Script.
+5. Periksa kebijakan publikasi nama donatur sebelum mengaktifkan website.
+
+API tidak dapat diverifikasi otomatis dari lingkungan pembuatan file, sehingga perlu pengujian browser di langkah 1.
