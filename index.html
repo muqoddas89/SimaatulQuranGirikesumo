@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075332">
+  <meta name="description" content="Informasi transparansi donasi dana, air mineral, dan kontribusi warga per RT untuk Simaatul Qur'an Girikesumo 2027.">
+  <title>Informasi Donasi | Simaatul Qur'an Girikesumo 2027</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#konten">Langsung ke konten</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a href="#beranda" class="brand" aria-label="Beranda Simaatul Qur'an Girikesumo">
+        <span class="brand-mark"><svg viewBox="0 0 58 55" aria-hidden="true"><path d="M8 31 29 37 50 31v13L29 50 8 44Z" fill="#fff7e1" stroke="#c59a35" stroke-width="2"/><path d="M29 36V17m0-11 4 7h-8l4-7Z" stroke="#d5ac50" stroke-width="2" fill="none"/><path d="M10 28q12-8 19 2 8-10 19-2v12q-11-7-19 2-8-9-19-2Z" fill="#fff" stroke="#12663f" stroke-width="2"/><path d="M5 47q23-4 24 4 5-8 24-4" stroke="#c59a35" stroke-width="3" fill="none"/></svg></span>
+        <span>Simaatul Qur'an<small>GIRIKESUMO 2027</small></span>
+      </a>
+      <button id="menuBtn" class="menu-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+      <nav id="nav" class="nav" aria-label="Navigasi utama">
+        <a href="#beranda" class="nav-link active">Beranda</a><a href="#ringkasan" class="nav-link">Rekap Donasi</a><a href="#rincian" class="nav-link" data-type="aghniya">Aghniya (Umum)</a><a href="#rincian" class="nav-link" data-type="air">Air Mineral</a><a href="#per-rt" class="nav-link">Donasi Warga/RT</a>
+        <a href="#rincian" class="nav-cta">Lihat Laporan <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="konten">
+    <section id="beranda" class="hero">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> TRANSPARANSI & KEBERSAMAAN</div>
+          <h1>Website Informasi <em>Hasil Donasi</em></h1>
+          <div class="event-title">Simaatul Qur'an Girikesumo 2027</div>
+          <p class="lead">Bersama Al-Qur'an, menguatkan ukhuwah. Pantau amanah dan partisipasi masyarakat dengan terbuka.</p>
+          <div class="event-meta"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/></svg>Ahad Kliwon, 3 Januari 2027</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Masjid Jami' Baitussalam Girikesumo</span></div>
+          <div class="hero-actions"><a href="#ringkasan" class="btn btn-main">Lihat Rekap Donasi <span>→</span></a><a href="#tentang" class="btn btn-outline">Tentang Kegiatan</a></div>
+        </div>
+        <div class="hero-art" aria-label="Ilustrasi Masjid Jami' Baitussalam Girikesumo sesuai cover proposal">
+          <div class="arch-outline" aria-hidden="true"></div>
+          <div class="lantern" aria-hidden="true">✦</div>
+          <div class="mosque-frame"><img class="mosque-art" src="assets/masjid-girikesumo-blend.png" alt="Ilustrasi utuh menara dan kompleks Masjid Jami' Baitussalam Girikesumo, diambil dari cover proposal"></div>
+          <img class="quran-art" src="assets/alquran-cover.webp" alt="Ilustrasi Al-Qur'an dari cover proposal">
+        </div>
+      </div>
+    </section>
+    <section class="status-bar shell" aria-live="polite"><div><span class="status-dot"></span><strong id="dataStatus">Menghubungkan database donasi…</strong><span class="status-separator">·</span><span id="updateText">—</span></div><span id="demoLabel" class="demo-pill" hidden>KONEKSI BELUM AKTIF</span></section>
+    <section id="ringkasan" class="section shell overview">
+      <div class="section-kicker">LAPORAN DONASI</div><div class="section-heading"><div><h2>Ringkasan Perolehan</h2><p>Rekap donasi yang telah diverifikasi oleh panitia.</p></div></div>
+      <div class="summary-grid">
+        <article class="summary-card"><div class="sum-icon">✧</div><div><p>Donasi Aghniya (Umum)</p><strong id="totalAghniya">Rp 0</strong><small>Donasi dana umum / aghniya</small></div></article>
+        <article class="summary-card"><div class="sum-icon">♧</div><div><p>Donasi Air Mineral</p><strong id="totalAir">0 Dus</strong><small>Jumlah dus terverifikasi</small></div></article>
+        <article class="summary-card"><div class="sum-icon">⌂</div><div><p>Donasi Warga per RT</p><strong id="totalWarga">Rp 0</strong><small><span id="totalRT">0 RT</span> berpartisipasi dari 6 RW</small></div></article>
+      </div>
+    </section>
+    <section id="per-rt" class="section shell rt-section"><div class="section-heading"><div><div class="section-kicker">PARTISIPASI 6 RW DESA BANYUMENENG</div><h2>Donasi Warga per RW dan RT</h2><p>Rekap kontribusi uang warga per RT, dikelompokkan berdasarkan RW 01 sampai RW 06. RT mengikuti data asli panitia.</p></div></div><div id="rwGrid" class="rw-grid"></div></section>
+    <section id="rincian" class="section detail-section"><div class="shell"><div class="section-heading"><div><div class="section-kicker">TERBUKA & TERDATA</div><h2>Riwayat Donasi</h2><p>Telusuri donasi aghniya, air mineral, dan warga berdasarkan RW/RT.</p></div><button class="btn btn-light" id="downloadCsv" type="button">↓ Unduh CSV</button></div>
+      <div class="table-panel"><div class="filters"><label class="search-wrap"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Cari nama donatur atau RT…" aria-label="Cari donasi"></label><label class="filter-wrap">Kategori<select id="categoryFilter"><option value="all">Semua kategori</option><option value="aghniya">Aghniya (Umum)</option><option value="air">Air Mineral</option><option value="warga">Donasi Warga per RT</option></select></label><label class="filter-wrap">RW<select id="rwFilter"><option value="all">Semua RW</option></select></label><label class="filter-wrap">RT<select id="rtFilter"><option value="all">Semua RT</option></select></label></div><div class="table-scroll"><table><thead><tr><th>Tanggal</th><th>Donatur</th><th>RW / RT</th><th>Kategori</th><th class="align-right">Jumlah</th></tr></thead><tbody id="donationRows"><tr><td colspan="5" class="empty-cell">Memuat data…</td></tr></tbody></table></div><div class="table-bottom"><span id="resultCount">0 transaksi</span><div class="pagination"><button id="prevBtn" type="button" aria-label="Halaman sebelumnya">←</button><span id="pageInfo">1 / 1</span><button id="nextBtn" type="button" aria-label="Halaman berikutnya">→</button></div></div></div>
+      </div></section>
+    <section id="tentang" class="section shell about-section"><div class="about-image"><img src="assets/alquran-cover.webp" alt="Ilustrasi Al-Qur'an pada cover proposal kegiatan"></div><div class="about-copy"><div class="section-kicker">TENTANG KEGIATAN</div><h2>Amanah yang Dijaga Bersama</h2><p>Simaatul Qur'an Girikesumo 2027 diselenggarakan pada <strong>Ahad Kliwon, 3 Januari 2027</strong> di <strong>Masjid Jami' Baitussalam Girikesumo</strong>, Desa Banyumeneng, Kecamatan Mranggen, Kabupaten Demak.</p><p>Website ini menjadi sarana informasi perkembangan tiga jenis donasi: Aghniya (umum), Air Mineral, serta Donasi Warga dari setiap RT di enam RW Desa Banyumeneng. Hanya donasi yang sudah diverifikasi panitia yang ditampilkan sebagai laporan resmi.</p></div></section>
+  </main>
+  <footer class="footer"><div class="shell footer-grid"><div><strong>Simaatul Qur'an Girikesumo 2027</strong><p>Bersama Al-Qur'an, Menguatkan Ukhuwah, Memakmurkan Masjid.</p></div><div><strong>Lokasi Kegiatan</strong><p>Masjid Jami' Baitussalam Girikesumo<br>Desa Banyumeneng, Mranggen, Demak</p></div><div><strong>Informasi</strong><p>Diselenggarakan oleh Panitia Simaatul Qur'an Girikesumo 2027.</p></div></div><div class="shell footer-bottom">© 2027 Panitia Simaatul Qur'an Girikesumo. Informasi donasi untuk masyarakat.</div></footer>
+</body>
+</html>
